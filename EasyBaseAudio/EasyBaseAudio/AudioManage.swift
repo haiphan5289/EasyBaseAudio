@@ -488,15 +488,15 @@ public class AudioManage {
             {
                 print("reverse geodcode fail: \(error!.localizedDescription)")
             }
-            if let pm = placemarks as? [CLPlacemark] {
+            if let pm = placemarks {
                 if pm.count > 0 {
                     let pm = placemarks![0]
-                    print(pm.country)
-                    print(pm.locality)
-                    print(pm.subLocality)
-                    print(pm.thoroughfare)
-                    print(pm.postalCode)
-                    print(pm.subThoroughfare)
+                    print(pm.country ?? "")
+                    print(pm.locality ?? "")
+                    print(pm.subLocality ?? "")
+                    print(pm.thoroughfare ?? "")
+                    print(pm.postalCode ?? "")
+                    print(pm.subThoroughfare ?? "")
                     
                     if pm.subThoroughfare != nil {
                         addressString = addressString + pm.subThoroughfare! + " "
