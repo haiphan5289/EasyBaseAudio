@@ -1,0 +1,16 @@
+PODS:
+  - EasyBaseAudio (1.0.0)
+
+DEPENDENCIES:
+  - EasyBaseAudio (from `../EasyBaseAudio`)
+
+EXTERNAL SOURCES:
+  EasyBaseAudio:
+    :path: "../EasyBaseAudio"
+
+SPEC CHECKSUMS:
+  EasyBaseAudio: 5c9b8d60ddc0039cd10021c7014070e82d5c20ed
+
+PODFILE CHECKSUM: 300337ca49e181dd028c30ffc14747fc7441001f
+
+COCOAPODS: 1.11.3
