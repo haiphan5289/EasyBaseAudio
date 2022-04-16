@@ -11,7 +11,7 @@ import Foundation
 import AVFoundation
 import CoreLocation
 import UIKit
-
+import MediaPlayer
 
 public class AudioManage {
     
@@ -43,6 +43,59 @@ public class AudioManage {
         let documentURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let outputURL = documentURL.appendingPathComponent("\(folder)/\(name)").appendingPathExtension(type.nameExport)
         return outputURL
+    }
+    
+    public func saveAppleMusic(folder: String, mediaItem: MPMediaItem, success: @escaping ((URL) -> Void), failure: @escaping ((Error?) -> Void)) {
+        //get media item first
+        
+        let songUrl = mediaItem.value(forProperty: MPMediaItemPropertyAssetURL) as! URL
+        print(songUrl)
+        
+        // get file extension andmime type
+        let str = songUrl.absoluteString
+        let str2 = str.replacingOccurrences( of : "ipod-library://item/item", with: "")
+        let arr = str2.components(separatedBy: "?")
+        var mimeType = arr[0]
+        mimeType = mimeType.replacingOccurrences( of : ".", with: "")
+        
+        let exportSession = AVAssetExportSession(asset: AVAsset(url: songUrl), presetName: AVAssetExportPresetAppleM4A)
+        exportSession?.shouldOptimizeForNetworkUse = true
+        exportSession?.outputFileType = AVFileType.m4a
+        
+        //save it into your local directory
+        let outputURL = self.createURL(folder: "\(folder)", name: mediaItem.title ?? "", type: .m4a)
+        //Delete Existing file
+        do
+            {
+                try FileManager.default.removeItem(at: outputURL)
+            }
+        catch let error as NSError
+        {
+            print(error.debugDescription)
+        }
+        
+        if let exportSession = exportSession {
+            exportSession.outputURL = outputURL
+            /// try to export the file and handle the status cases
+            exportSession.exportAsynchronously(completionHandler: {
+                switch exportSession.status {
+                case .failed:
+                    if let _error = exportSession.error {
+                        failure(_error)
+                    }
+                    
+                case .cancelled:
+                    if let _error = exportSession.error {
+                        failure(_error)
+                    }
+                default:
+                    print("finished")
+                    success(outputURL)
+                }
+            })
+        } else {
+            failure(nil)
+        }
     }
     
     public func getItemsFolder(folder: String) -> [URL] {
