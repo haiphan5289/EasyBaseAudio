@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9305F2E228103BFD00ED87C5 /* waveformview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9305F2E128103BFD00ED87C5 /* waveformview.swift */; };
 		93A4A4D52805A8E400A792C6 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A4D42805A8E400A792C6 /* Recording.swift */; };
 		93A4A4FE2805AB5E00A792C6 /* AudioEfffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A4FD2805AB5E00A792C6 /* AudioEfffect.swift */; };
 		93A4A5092805AE5700A792C6 /* ABBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A5012805AE5700A792C6 /* ABBorder.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9305F2E128103BFD00ED87C5 /* waveformview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = waveformview.swift; sourceTree = "<group>"; };
 		93A4A4D42805A8E400A792C6 /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		93A4A4FD2805AB5E00A792C6 /* AudioEfffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEfffect.swift; sourceTree = "<group>"; };
 		93A4A5012805AE5700A792C6 /* ABBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABBorder.swift; sourceTree = "<group>"; };
@@ -57,9 +59,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9305F2E028103BFD00ED87C5 /* WaveFormView */ = {
+			isa = PBXGroup;
+			children = (
+				9305F2E128103BFD00ED87C5 /* waveformview.swift */,
+			);
+			path = WaveFormView;
+			sourceTree = "<group>";
+		};
 		93A4A5002805AE5700A792C6 /* RangeSlider */ = {
 			isa = PBXGroup;
 			children = (
+				9305F2E028103BFD00ED87C5 /* WaveFormView */,
 				93A4A5012805AE5700A792C6 /* ABBorder.swift */,
 				93A4A5022805AE5700A792C6 /* ABEndIndicator.swift */,
 				93A4A5032805AE5700A792C6 /* ABProgressIndicator.swift */,
@@ -199,6 +210,7 @@
 				93E93F6C2802B92200370E3C /* URL+Extension.swift in Sources */,
 				93A4A50A2805AE5700A792C6 /* ABEndIndicator.swift in Sources */,
 				93A4A50E2805AE5700A792C6 /* ABStartIndicator.swift in Sources */,
+				9305F2E228103BFD00ED87C5 /* waveformview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

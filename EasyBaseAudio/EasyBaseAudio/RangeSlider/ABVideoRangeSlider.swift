@@ -47,6 +47,7 @@ public class ABVideoRangeSlider: UIView {
     public var maxSpace: Float = 0              // In Seconds
     
     var isUpdatingThumbnails = false
+    public var waveForm: WaveformZoomable = WaveformZoomable(frame: .zero)
     
     public enum ABTimeViewPosition{
         case top
@@ -61,6 +62,11 @@ public class ABVideoRangeSlider: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setup()
+        var f = self.waveForm.frame
+        f.origin.x = 0
+        f.origin.y = 10
+        f.size = CGSize(width: self.frame.size.width, height: self.frame.size.height - 10)
+        self.waveForm.frame = f
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -210,9 +216,15 @@ public class ABVideoRangeSlider: UIView {
         }
     }
     
-    public func setVideoURL(videoURL: URL){
+    public func setVideoURL(videoURL: URL, colorShow: UIColor, colorDisappear: UIColor) {
         self.duration = ABVideoHelper.videoDuration(videoURL: videoURL)
         self.videoURL = videoURL
+        self.waveForm.listPointtoDraw(file: videoURL,
+                                      colorShow: colorShow,
+                                      colorDisappear: colorDisappear,
+                                      viewSoundWave: .showAudio) { _ in
+            
+        }
         self.superview?.layoutSubviews()
 //        self.updateThumbnails()
     }
