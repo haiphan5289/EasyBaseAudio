@@ -30,7 +30,7 @@ public class ABVideoRangeSlider: UIView {
     
     let thumbnailsManager   = ABThumbnailsManager()
     var duration: Float64   = 0.0
-    var videoURL            = URL(fileURLWithPath: "")
+    public var videoURL            = URL(fileURLWithPath: "")
     
     var progressPercentage: CGFloat = 0         // Represented in percentage
     var startPercentage: CGFloat    = 0         // Represented in percentage
@@ -59,7 +59,7 @@ public class ABVideoRangeSlider: UIView {
         self.setup()
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         self.setup()
         var f = self.waveForm.frame
@@ -67,6 +67,7 @@ public class ABVideoRangeSlider: UIView {
         f.origin.y = 10
         f.size = CGSize(width: self.frame.size.width, height: self.frame.size.height - 10)
         self.waveForm.frame = f
+        self.addSubview(waveForm)
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -138,7 +139,7 @@ public class ABVideoRangeSlider: UIView {
         
 //        let viewDrag = UIPanGestureRecognizer(target:self,
 //                                              action: #selector(viewDragged(recognizer:)))
-//        
+//
 //        draggableView.addGestureRecognizer(viewDrag)
         self.draggableView.backgroundColor = .clear
         self.addSubview(draggableView)
@@ -162,6 +163,20 @@ public class ABVideoRangeSlider: UIView {
     }
     
     // MARK: Public functions
+    
+    public func updateBgColor(colorBg: UIColor) {
+        let views = [self.startIndicator, self.endIndicator, self.topLine, self.bottomLine]
+        views.forEach { v in
+            v.backgroundColor = colorBg
+        }
+    }
+    
+    public func hideTimeLine(hide: Bool) {
+        let views = [self.endTimeView, self.startTimeView]
+        views.forEach { v in
+            v.isHidden = hide
+        }
+    }
     
     public func hideViews(hide: Bool) {
         let views = [self.startIndicator, self.endIndicator, self.topLine, self.bottomLine]
@@ -222,8 +237,7 @@ public class ABVideoRangeSlider: UIView {
         self.waveForm.listPointtoDraw(file: videoURL,
                                       colorShow: colorShow,
                                       colorDisappear: colorDisappear,
-                                      viewSoundWave: .showAudio) { _ in
-            
+                                      viewSoundWave: .audio) { _ in
         }
         self.superview?.layoutSubviews()
 //        self.updateThumbnails()
@@ -318,6 +332,7 @@ public class ABVideoRangeSlider: UIView {
         
         self.delegate?.didChangeValue(videoRangeSlider: self, startTime: startSeconds, endTime: endSeconds)
         self.delegate?.updateFrameSlide(videoRangeSlider: self, startIndicator: startIndicator.frame.origin.x, endIndicator: endIndicator.frame.origin.x)
+        self.waveForm.drawReadUpdate(rect: self.waveForm.frame, from: startIndicator.frame.origin.x, to: endIndicator.frame.origin.x, listPoint: self.waveForm.listPointOrigin, listPosition: self.waveForm.listPoint)
     
         if self.progressPercentage != progressPercentage{
             let progressSeconds = secondsFromValue(value: progressPercentage)

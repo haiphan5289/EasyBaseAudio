@@ -33,7 +33,7 @@ open class Recording : NSObject {
     open var channels = 1
     
     fileprivate let session = AVAudioSession.sharedInstance()
-    var recorder: AVAudioRecorder?
+    public var recorder: AVAudioRecorder?
     fileprivate var player: AVAudioPlayer?
     fileprivate var link: CADisplayLink?
     open var folderName: String = ""

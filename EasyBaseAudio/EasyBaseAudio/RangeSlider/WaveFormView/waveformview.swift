@@ -71,13 +71,15 @@ public class WaveformZoomable : UIView {
     
     public convenience init(withFile: URL, style: WaveformStyle = .soundcloud, colorShow: UIColor, colorDisappaer: UIColor) {
         self.init()
-        openFile(withFile)
+        self.openFile(withFile, colorShow: .red, colorDisappear: .blue)
         self.colorShow = colorShow
         self.colorDisappaer = colorDisappaer
         self.style = style
     }
     
-    public func openFile(_ file: URL) {
+    public func openFile(_ file: URL, colorShow: UIColor, colorDisappear: UIColor ) {
+        self.colorShow = colorShow
+        self.colorDisappaer = colorDisappear
         self.url = file
         var audioFile = AVAudioFile()
         do {
@@ -430,23 +432,22 @@ public class WaveformZoomable : UIView {
         }
     }
     
-//    func changeColor(state: ShowAllAudio.StateSelectAudio) {
-//        guard let subplayers = self.layer.sublayers else {
-//            return
-//        }
-//
-//        for sublayer in subplayers where sublayer is CAShapeLayer {
-//            guard let fillLayer = sublayer as? CAShapeLayer else { return }
-//
-//            switch state {
-//            case .select:
-//                fillLayer.fillColor = UIColor(named: "dodgerBlue1")?.cgColor
-//            default:
-//                fillLayer.fillColor = UIColor(named: "lightGreyBlue")?.cgColor
-//            }
-//        }
-//
-//    }
+    public func changeColor(isSelect: Bool) {
+        guard let subplayers = self.layer.sublayers else {
+            return
+        }
+
+        for sublayer in subplayers where sublayer is CAShapeLayer {
+            guard let fillLayer = sublayer as? CAShapeLayer else { return }
+            
+            if isSelect {
+                fillLayer.fillColor = self.colorShow.cgColor
+            } else {
+                fillLayer.fillColor = self.colorDisappaer.cgColor
+            }
+        }
+
+    }
     
     public func removePath() {
         guard let subplayers = self.layer.sublayers else {
