@@ -3,7 +3,7 @@
 //  baominh_ios
 //
 //  Created by haiphan on 09/10/2021.
-////
+//
 
 import Foundation
 import AVFoundation
@@ -151,7 +151,7 @@ public class AudioManage {
     
     public func changeNameFile(folderName: String, oldURL: URL, newName: String, complention: ((URL) -> Void)?, failure: ((String) -> Void)?) {
         do {
-            let createURL = self.createURL(folder: folderName, name: "\(newName).\(oldURL.getDate() )", type: .m4a)
+            let createURL = self.createURL(folder: folderName, name: "\(newName)", type: .mp3)
             try FileManager.default.moveItem(at: oldURL, to: createURL)
             complention?(createURL)
         } catch {
@@ -402,6 +402,51 @@ public class AudioManage {
             }
         })
         return
+    }
+    
+    public func converVideofromPhotoLibraryToMP4(videoURL: URL, folderName: String, completion: @escaping ((URL) -> Void))  {
+        let avAsset = AVURLAsset(url: videoURL, options: nil)
+        guard let  exportSession = AVAssetExportSession(asset: avAsset, presetName: AVAssetExportPresetPassthrough) else {
+            return
+        }
+//    let filePath = documentsDirectory2.URLByAppendingPathComponent("rendered-Video.mp4")
+        let filePath = AudioManage.shared.createURL(folder: folderName, name: "\(videoURL.getName()) \(self.parseDatetoString())", type: .mp4)
+        deleteFile(filePath: filePath)
+        
+        exportSession.outputURL = filePath
+        exportSession.outputFileType = AVFileType.mp4
+        exportSession.shouldOptimizeForNetworkUse = true
+        let start = CMTimeMakeWithSeconds(0.0, preferredTimescale: 0)
+        let range = CMTimeRangeMake(start: start, duration: avAsset.duration)
+        exportSession.timeRange = range
+
+        exportSession.exportAsynchronously(completionHandler: {() -> Void in
+        switch exportSession.status {
+        case .failed:
+            print()
+        case .cancelled:
+            print("Export canceled")
+        case .completed:
+            completion(exportSession.outputURL!)
+        default:
+            break
+        }
+
+    })
+
+
+    }
+
+    func deleteFile(filePath:URL) {
+        guard FileManager.default.fileExists(atPath: filePath.path) else {
+            return
+        }
+        
+        do {
+            try FileManager.default.removeItem(atPath: filePath.path)
+        }catch{
+            fatalError("Unable to delete file: \(error) : \(#function).")
+        }
     }
     
     //MARK: COVERT TO AUDIO
