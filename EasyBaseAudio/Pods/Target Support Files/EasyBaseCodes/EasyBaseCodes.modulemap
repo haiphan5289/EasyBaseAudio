@@ -1,0 +1,6 @@
+framework module EasyBaseCodes {
+  umbrella header "EasyBaseCodes-umbrella.h"
+
+  export *
+  module * { export * }
+}

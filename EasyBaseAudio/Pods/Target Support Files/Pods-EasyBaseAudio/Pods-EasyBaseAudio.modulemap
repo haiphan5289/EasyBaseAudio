@@ -1,0 +1,6 @@
+framework module Pods_EasyBaseAudio {
+  umbrella header "Pods-EasyBaseAudio-umbrella.h"
+
+  export *
+  module * { export * }
+}
