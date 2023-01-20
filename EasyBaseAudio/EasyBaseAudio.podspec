@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "EasyBaseAudio"
-  spec.version      = "1.0.19"
+  spec.version      = "2.0.1"
   spec.summary      = "This framework handless the everything about Audio"
   spec.description  = "I hope This Framework will you to code easy, It take time less than"
 
