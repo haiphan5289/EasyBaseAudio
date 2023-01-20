@@ -7,42 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9389D5E8297A4B1E005ED7A7 /* ABStartIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D5D8297A4B1E005ED7A7 /* ABStartIndicator.swift */; };
-		9389D5E9297A4B1E005ED7A7 /* ABBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D5D9297A4B1E005ED7A7 /* ABBorder.swift */; };
-		9389D5EA297A4B1E005ED7A7 /* ABProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D5DA297A4B1E005ED7A7 /* ABProgressIndicator.swift */; };
-		9389D5EB297A4B1E005ED7A7 /* waveformview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D5DB297A4B1E005ED7A7 /* waveformview.swift */; };
-		9389D5EC297A4B1E005ED7A7 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D5DC297A4B1E005ED7A7 /* Recording.swift */; };
-		9389D5ED297A4B1E005ED7A7 /* ABVideoRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D5DD297A4B1E005ED7A7 /* ABVideoRangeSlider.swift */; };
-		9389D5EE297A4B1E005ED7A7 /* AudioManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D5DE297A4B1E005ED7A7 /* AudioManage.swift */; };
-		9389D5EF297A4B1E005ED7A7 /* AudioType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D5DF297A4B1E005ED7A7 /* AudioType.swift */; };
-		9389D5F0297A4B1E005ED7A7 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D5E0297A4B1E005ED7A7 /* Date+Extension.swift */; };
-		9389D5F1297A4B1E005ED7A7 /* ABTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D5E1297A4B1E005ED7A7 /* ABTimeView.swift */; };
-		9389D5F2297A4B1E005ED7A7 /* ABThumbnailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D5E2297A4B1E005ED7A7 /* ABThumbnailsManager.swift */; };
 		9389D5F3297A4B1E005ED7A7 /* SongExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D5E3297A4B1E005ED7A7 /* SongExporter.swift */; };
-		9389D5F4297A4B1E005ED7A7 /* ABVideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D5E4297A4B1E005ED7A7 /* ABVideoHelper.swift */; };
-		9389D5F5297A4B1E005ED7A7 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D5E5297A4B1E005ED7A7 /* URL+Extension.swift */; };
-		9389D5F6297A4B1E005ED7A7 /* AudioEfffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D5E6297A4B1E005ED7A7 /* AudioEfffect.swift */; };
-		9389D5F7297A4B1E005ED7A7 /* ABEndIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D5E7297A4B1E005ED7A7 /* ABEndIndicator.swift */; };
+		9389D625297A5165005ED7A7 /* ABVideoRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D616297A5164005ED7A7 /* ABVideoRangeSlider.swift */; };
+		9389D626297A5165005ED7A7 /* ABBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D617297A5164005ED7A7 /* ABBorder.swift */; };
+		9389D627297A5165005ED7A7 /* ABTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D618297A5164005ED7A7 /* ABTimeView.swift */; };
+		9389D628297A5165005ED7A7 /* AudioManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D619297A5164005ED7A7 /* AudioManage.swift */; };
+		9389D629297A5165005ED7A7 /* waveformview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D61A297A5164005ED7A7 /* waveformview.swift */; };
+		9389D62A297A5165005ED7A7 /* ABThumbnailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D61B297A5165005ED7A7 /* ABThumbnailsManager.swift */; };
+		9389D62B297A5165005ED7A7 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D61C297A5165005ED7A7 /* URL+Extension.swift */; };
+		9389D62C297A5165005ED7A7 /* ABStartIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D61D297A5165005ED7A7 /* ABStartIndicator.swift */; };
+		9389D62D297A5165005ED7A7 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D61E297A5165005ED7A7 /* Date+Extension.swift */; };
+		9389D62E297A5165005ED7A7 /* ABProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D61F297A5165005ED7A7 /* ABProgressIndicator.swift */; };
+		9389D62F297A5165005ED7A7 /* AudioEfffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D620297A5165005ED7A7 /* AudioEfffect.swift */; };
+		9389D630297A5165005ED7A7 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D621297A5165005ED7A7 /* Recording.swift */; };
+		9389D631297A5165005ED7A7 /* ABVideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D622297A5165005ED7A7 /* ABVideoHelper.swift */; };
+		9389D632297A5165005ED7A7 /* ABEndIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D623297A5165005ED7A7 /* ABEndIndicator.swift */; };
+		9389D633297A5165005ED7A7 /* AudioType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9389D624297A5165005ED7A7 /* AudioType.swift */; };
 		93E93F5D2802B74400370E3C /* EasyBaseAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E93F5B2802B74400370E3C /* EasyBaseAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9389D5D8297A4B1E005ED7A7 /* ABStartIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABStartIndicator.swift; sourceTree = "<group>"; };
-		9389D5D9297A4B1E005ED7A7 /* ABBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABBorder.swift; sourceTree = "<group>"; };
-		9389D5DA297A4B1E005ED7A7 /* ABProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABProgressIndicator.swift; sourceTree = "<group>"; };
-		9389D5DB297A4B1E005ED7A7 /* waveformview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = waveformview.swift; sourceTree = "<group>"; };
-		9389D5DC297A4B1E005ED7A7 /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
-		9389D5DD297A4B1E005ED7A7 /* ABVideoRangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABVideoRangeSlider.swift; sourceTree = "<group>"; };
-		9389D5DE297A4B1E005ED7A7 /* AudioManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManage.swift; sourceTree = "<group>"; };
-		9389D5DF297A4B1E005ED7A7 /* AudioType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioType.swift; sourceTree = "<group>"; };
-		9389D5E0297A4B1E005ED7A7 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
-		9389D5E1297A4B1E005ED7A7 /* ABTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABTimeView.swift; sourceTree = "<group>"; };
-		9389D5E2297A4B1E005ED7A7 /* ABThumbnailsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABThumbnailsManager.swift; sourceTree = "<group>"; };
 		9389D5E3297A4B1E005ED7A7 /* SongExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongExporter.swift; sourceTree = "<group>"; };
-		9389D5E4297A4B1E005ED7A7 /* ABVideoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABVideoHelper.swift; sourceTree = "<group>"; };
-		9389D5E5297A4B1E005ED7A7 /* URL+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
-		9389D5E6297A4B1E005ED7A7 /* AudioEfffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEfffect.swift; sourceTree = "<group>"; };
-		9389D5E7297A4B1E005ED7A7 /* ABEndIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABEndIndicator.swift; sourceTree = "<group>"; };
+		9389D616297A5164005ED7A7 /* ABVideoRangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABVideoRangeSlider.swift; sourceTree = "<group>"; };
+		9389D617297A5164005ED7A7 /* ABBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABBorder.swift; sourceTree = "<group>"; };
+		9389D618297A5164005ED7A7 /* ABTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABTimeView.swift; sourceTree = "<group>"; };
+		9389D619297A5164005ED7A7 /* AudioManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManage.swift; sourceTree = "<group>"; };
+		9389D61A297A5164005ED7A7 /* waveformview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = waveformview.swift; sourceTree = "<group>"; };
+		9389D61B297A5165005ED7A7 /* ABThumbnailsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABThumbnailsManager.swift; sourceTree = "<group>"; };
+		9389D61C297A5165005ED7A7 /* URL+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		9389D61D297A5165005ED7A7 /* ABStartIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABStartIndicator.swift; sourceTree = "<group>"; };
+		9389D61E297A5165005ED7A7 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		9389D61F297A5165005ED7A7 /* ABProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABProgressIndicator.swift; sourceTree = "<group>"; };
+		9389D620297A5165005ED7A7 /* AudioEfffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEfffect.swift; sourceTree = "<group>"; };
+		9389D621297A5165005ED7A7 /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
+		9389D622297A5165005ED7A7 /* ABVideoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABVideoHelper.swift; sourceTree = "<group>"; };
+		9389D623297A5165005ED7A7 /* ABEndIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABEndIndicator.swift; sourceTree = "<group>"; };
+		9389D624297A5165005ED7A7 /* AudioType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioType.swift; sourceTree = "<group>"; };
 		93E93F582802B74400370E3C /* EasyBaseAudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasyBaseAudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E93F5B2802B74400370E3C /* EasyBaseAudio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyBaseAudio.h; sourceTree = "<group>"; };
 		93E93F5C2802B74400370E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,22 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				93E93F5A2802B74400370E3C /* EasyBaseAudio */,
-				9389D5D9297A4B1E005ED7A7 /* ABBorder.swift */,
-				9389D5E7297A4B1E005ED7A7 /* ABEndIndicator.swift */,
-				9389D5DA297A4B1E005ED7A7 /* ABProgressIndicator.swift */,
-				9389D5D8297A4B1E005ED7A7 /* ABStartIndicator.swift */,
-				9389D5E2297A4B1E005ED7A7 /* ABThumbnailsManager.swift */,
-				9389D5E1297A4B1E005ED7A7 /* ABTimeView.swift */,
-				9389D5E4297A4B1E005ED7A7 /* ABVideoHelper.swift */,
-				9389D5DD297A4B1E005ED7A7 /* ABVideoRangeSlider.swift */,
-				9389D5E6297A4B1E005ED7A7 /* AudioEfffect.swift */,
-				9389D5DE297A4B1E005ED7A7 /* AudioManage.swift */,
-				9389D5DF297A4B1E005ED7A7 /* AudioType.swift */,
-				9389D5E0297A4B1E005ED7A7 /* Date+Extension.swift */,
-				9389D5DC297A4B1E005ED7A7 /* Recording.swift */,
-				9389D5E3297A4B1E005ED7A7 /* SongExporter.swift */,
-				9389D5E5297A4B1E005ED7A7 /* URL+Extension.swift */,
-				9389D5DB297A4B1E005ED7A7 /* waveformview.swift */,
 				93E93F592802B74400370E3C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +80,22 @@
 			children = (
 				93E93F5B2802B74400370E3C /* EasyBaseAudio.h */,
 				93E93F5C2802B74400370E3C /* Info.plist */,
+				9389D617297A5164005ED7A7 /* ABBorder.swift */,
+				9389D623297A5165005ED7A7 /* ABEndIndicator.swift */,
+				9389D61F297A5165005ED7A7 /* ABProgressIndicator.swift */,
+				9389D61D297A5165005ED7A7 /* ABStartIndicator.swift */,
+				9389D61B297A5165005ED7A7 /* ABThumbnailsManager.swift */,
+				9389D618297A5164005ED7A7 /* ABTimeView.swift */,
+				9389D622297A5165005ED7A7 /* ABVideoHelper.swift */,
+				9389D616297A5164005ED7A7 /* ABVideoRangeSlider.swift */,
+				9389D620297A5165005ED7A7 /* AudioEfffect.swift */,
+				9389D619297A5164005ED7A7 /* AudioManage.swift */,
+				9389D624297A5165005ED7A7 /* AudioType.swift */,
+				9389D61E297A5165005ED7A7 /* Date+Extension.swift */,
+				9389D621297A5165005ED7A7 /* Recording.swift */,
+				9389D61C297A5165005ED7A7 /* URL+Extension.swift */,
+				9389D61A297A5164005ED7A7 /* waveformview.swift */,
+				9389D5E3297A4B1E005ED7A7 /* SongExporter.swift */,
 			);
 			path = EasyBaseAudio;
 			sourceTree = "<group>";
@@ -179,22 +179,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9389D5EA297A4B1E005ED7A7 /* ABProgressIndicator.swift in Sources */,
-				9389D5E9297A4B1E005ED7A7 /* ABBorder.swift in Sources */,
-				9389D5F6297A4B1E005ED7A7 /* AudioEfffect.swift in Sources */,
-				9389D5F2297A4B1E005ED7A7 /* ABThumbnailsManager.swift in Sources */,
-				9389D5F1297A4B1E005ED7A7 /* ABTimeView.swift in Sources */,
-				9389D5E8297A4B1E005ED7A7 /* ABStartIndicator.swift in Sources */,
-				9389D5F7297A4B1E005ED7A7 /* ABEndIndicator.swift in Sources */,
-				9389D5F5297A4B1E005ED7A7 /* URL+Extension.swift in Sources */,
-				9389D5EB297A4B1E005ED7A7 /* waveformview.swift in Sources */,
-				9389D5F4297A4B1E005ED7A7 /* ABVideoHelper.swift in Sources */,
-				9389D5EC297A4B1E005ED7A7 /* Recording.swift in Sources */,
-				9389D5EE297A4B1E005ED7A7 /* AudioManage.swift in Sources */,
-				9389D5EF297A4B1E005ED7A7 /* AudioType.swift in Sources */,
+				9389D62C297A5165005ED7A7 /* ABStartIndicator.swift in Sources */,
+				9389D628297A5165005ED7A7 /* AudioManage.swift in Sources */,
+				9389D62F297A5165005ED7A7 /* AudioEfffect.swift in Sources */,
+				9389D62B297A5165005ED7A7 /* URL+Extension.swift in Sources */,
+				9389D631297A5165005ED7A7 /* ABVideoHelper.swift in Sources */,
+				9389D62A297A5165005ED7A7 /* ABThumbnailsManager.swift in Sources */,
+				9389D629297A5165005ED7A7 /* waveformview.swift in Sources */,
+				9389D62D297A5165005ED7A7 /* Date+Extension.swift in Sources */,
+				9389D627297A5165005ED7A7 /* ABTimeView.swift in Sources */,
+				9389D626297A5165005ED7A7 /* ABBorder.swift in Sources */,
+				9389D62E297A5165005ED7A7 /* ABProgressIndicator.swift in Sources */,
+				9389D632297A5165005ED7A7 /* ABEndIndicator.swift in Sources */,
 				9389D5F3297A4B1E005ED7A7 /* SongExporter.swift in Sources */,
-				9389D5ED297A4B1E005ED7A7 /* ABVideoRangeSlider.swift in Sources */,
-				9389D5F0297A4B1E005ED7A7 /* Date+Extension.swift in Sources */,
+				9389D625297A5165005ED7A7 /* ABVideoRangeSlider.swift in Sources */,
+				9389D633297A5165005ED7A7 /* AudioType.swift in Sources */,
+				9389D630297A5165005ED7A7 /* Recording.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
