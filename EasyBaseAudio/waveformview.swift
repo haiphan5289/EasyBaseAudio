@@ -166,6 +166,7 @@ public class WaveformZoomable : UIView {
     }
     
     public func listPointtoDraw(file: URL, colorShow: UIColor, colorDisappear: UIColor, viewSoundWave: ViewSoundWave, comlention: ((([PointWave]) -> Void)?) ) {
+        self.clipsToBounds = true
         self.isLoading = true
         self.colorShow = colorShow
         self.colorDisappaer = colorDisappear

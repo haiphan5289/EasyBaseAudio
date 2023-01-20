@@ -141,11 +141,11 @@ open class Recording : NSObject {
         state = .play
     }
     
-    func pause() {
+    open func pause() {
         recorder?.pause()
     }
     
-    func continueRecord() {
+    open func continueRecord() {
         recorder?.record()
     }
     

@@ -53,7 +53,7 @@ public enum AudioType: Int, CaseIterable {
         case .caf:
             return AVAssetExportPresetPassthrough
         default:
-            return AVAssetExportPresetHighestQuality
+            return AVAssetExportPresetLowQuality
             
         }
     }
