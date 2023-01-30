@@ -13,6 +13,45 @@ import MediaPlayer
 
 public class AudioManage {
     
+    public enum ImageType: CaseIterable {
+        case jpeg, png, jpg, zip, video, mp4, mp3, m4a, wav, m4r, pdf, txt
+        
+        public var text: String {
+            switch self {
+            case .jpeg: return ".jpeg"
+            case .png: return ".png"
+            case .jpg: return ".jpg"
+            case .zip: return ".zip"
+            case .video: return ".MOV"
+            case .mp4: return ".mp4"
+            case .mp3: return ".mp3"
+            case .m4a: return ".m4a"
+            case .wav: return ".wav"
+            case .m4r: return ".m4r"
+            case .pdf: return ".pdf"
+            case .txt: return ".txt"
+            }
+        }
+        
+        public var nameImage: String {
+            switch self {
+            case .jpeg, .png, .jpg: return ""
+            case .zip: return "ic_zip"
+            case .video, .mp4, .mp3, .m4a, .wav, .m4r: return "ic_music"
+            case .pdf: return "ic_pdf"
+            case .txt: return "ic_text"
+            }
+        }
+        
+        public var value: String {
+            return text.replacingOccurrences(of: ".", with: "")
+        }
+    }
+    
+    enum ErrorAsync: Error {
+        case unknown
+    }
+    
     enum StatusApp {
         case bg, foreground
     }
@@ -147,6 +186,115 @@ public class AudioManage {
             print("\(err.localizedDescription)")
         }
         return []
+    }
+    
+    public func rangeTexts(source: NSMutableAttributedString, searchText: String) -> [NSRange] {
+        do {
+            let regEx = try NSRegularExpression(pattern: searchText, options: NSRegularExpression.Options.ignoreMetacharacters)
+            
+            let matchesRanges = regEx.matches(in: source.string, options: [], range: NSMakeRange(0, source.length))
+            
+            return matchesRanges.map { item -> NSRange in
+                return item.range
+            }
+            
+        } catch {
+            print(error)
+        }
+        return []
+    }
+    
+    public func detectPathFolder(url: URL) -> String {
+        guard let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else {
+            return ""
+        }
+        let appURL = URL(fileURLWithPath: documentDirectoryPath)
+        if url.absoluteString.count < appURL.absoluteString.count {
+            return ""
+        }
+        var string: String = "file:/"
+        url.pathComponents.enumerated().forEach { text in
+            let offSet = text.offset
+            let element = text.element
+            if offSet <= 5 && element == "private" {
+                
+            } else {
+                string += element + "/"
+            }
+        }
+        let start = string.index(string.startIndex, offsetBy: appURL.absoluteString.count)
+        let end = string.index(string.endIndex, offsetBy: 0)
+        let range = start..<end
+        return String(string[range])
+    }
+    
+    //MARK: CUT THE PREVIOUS FOLDER
+    public func getNameFolderToCompress(url: URL) -> String {
+        let att = NSMutableAttributedString(string: self.detectPathFolder(url: url))
+        let list = self.rangeTexts(source: att, searchText: "/")
+        if list.count <= 1 {
+            return ""
+        }
+        let last = list.last
+        let start = att.string.index(att.string.startIndex, offsetBy: 0)
+        let end = att.string.index(att.string.startIndex, offsetBy: (last?.location ?? 0))
+        let range = start..<end
+        let updateString = String(att.string[range])
+        
+        let att2 = NSMutableAttributedString(string: updateString)
+        let list2 = self.rangeTexts(source: att2, searchText: "/")
+        let last2 = list2.last
+        let start2 = att2.string.index(att2.string.startIndex, offsetBy: 0)
+        let end2 = att2.string.index(att2.string.startIndex, offsetBy: (last2?.location ?? 0) + 1)
+        let range2 = start2..<end2
+        return (String(att2.string[range2]))
+    }
+    
+    //MARK: DETECT FILE TYPE
+    public func detectFile(url: URL) -> ImageType? {
+        var typeImage: ImageType?
+        
+        ImageType.allCases.forEach { type in
+            if url.absoluteString.uppercased().contains( type.text.uppercased() ) {
+                typeImage = type
+            }
+        }
+        
+        if let type = typeImage {
+            return type
+        }
+        
+        return nil
+    }
+    
+    public func onlyChangeFile(old: URL, new: String) async throws -> Result<URL, Error> {
+        guard let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else {
+            return .failure(ErrorAsync.unknown)
+        }
+        let appURL = URL(fileURLWithPath: documentDirectoryPath)
+        
+        do {
+            
+            let name: String
+            
+            switch self.detectFile(url: old) {
+            case .none:
+                name = "\(new).\(old.getType() ?? "")"
+            default:
+                name = "\(new)"
+            }
+            
+            var destinationPath = appURL.appendingPathComponent("\(name)")
+            
+            if let imageType = self.detectFile(url: old) {
+                destinationPath.appendPathExtension(imageType.value)
+            }
+            
+            try FileManager.default.moveItem(at: old, to: destinationPath)
+            return .success(destinationPath)
+        } catch {
+            return .failure(error)
+        }
     }
     
     public func changeNameFile(folderName: String, oldURL: URL, newName: String, complention: ((URL) -> Void)?, failure: ((String) -> Void)?) {
